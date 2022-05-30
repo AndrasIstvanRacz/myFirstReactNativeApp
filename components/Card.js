@@ -9,7 +9,9 @@ import {
 const Card = ({data}) => {
 
   return (
-    <Pressable style={styles.card} onPress={() => console.log(data.download_url)}>
+    <Pressable
+      style={styles.card}
+      onPress={() => console.log(data.download_url)}>
       <View style={{width: '100%', height: 250}}>
         <Image
           style={styles.image}
@@ -18,7 +20,10 @@ const Card = ({data}) => {
             uri: data.download_url,
           }}/>
       </View>
-      <Text>{data.author}</Text>
+        <Text
+          style={styles.author}>
+          {data.author}
+        </Text>
     </Pressable>
   );
 }
@@ -26,6 +31,7 @@ export default Card;
 
 const styles = StyleSheet.create({
   card: {
+    flex: 1,
     backgroundColor: '#fff',
     borderRadius: 8,
     margin: 10,
@@ -33,9 +39,15 @@ const styles = StyleSheet.create({
   },
   image: {
     width: '100%',
-    height: '80%',
+    height: '100%',
     borderTopLeftRadius: 8,
     borderTopRightRadius: 8,
+  },
+  author: {
+    flex: 1,
+    fontSize: 25,
+    alignSelf: 'center',
+    padding: 5,
   },
 });
 
