@@ -11,7 +11,6 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <StatusBar hidden/>
       <Stack.Navigator
         screenOptions={{
           headerShown: false

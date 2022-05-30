@@ -1,6 +1,6 @@
 import {
   StyleSheet, Text, SafeAreaView,
-  TouchableOpacity, ImageBackground
+  TouchableOpacity, ImageBackground, StatusBar
 } from "react-native";
 import HomeBackground from "../assets/home-background.jpg"
 
@@ -8,7 +8,7 @@ import HomeBackground from "../assets/home-background.jpg"
 export default function Home ({navigation}) {
   return (
     <SafeAreaView style={styles.container}>
-
+      <StatusBar hidden/>
       <ImageBackground
         source={HomeBackground}
         resizeMode="cover"
@@ -37,9 +37,16 @@ const styles = StyleSheet.create({
     backgroundColor: "#a12d2d",
     alignItems: "center",
     borderRadius: 8,
-    elevation: 20,
     width: "70%",
-    bottom: 100
+    bottom: 100,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.29,
+    shadowRadius: 4.65,
+    elevation: 7,
   },
   buttonText: {
     color: "white",
