@@ -6,16 +6,24 @@ import Header from "../components/Header";
 
 
 export default function Cards() {
-  const [data, setData] = useState();
+  const [data, setData] = useState([]);
+  const [filteredData, setFilteredData] = useState([]);
 
   useEffect(() => {
     getData().then(response => {
       setData(response)
+      setFilteredData(response)
     });
   }, []);
 
-  const handelSearch =(author)=>{
+  const handelSearch = (author) => {
     console.log(author)
+    setFilteredData(
+      data.filter((value) => value.author
+        .toLowerCase()
+        .includes(author.toLowerCase())
+      )
+    )
   }
 
   return (
@@ -23,7 +31,8 @@ export default function Cards() {
       <StatusBar hidden={false} backgroundColor={'#282c34'}/>
       <Header onSearch={handelSearch}/>
       <FlatList
-        data={data}
+        contentContainerStyle={{paddingBottom: 100}}
+        data={filteredData}
         renderItem={({item}) => <Card data={item}/>}
         keyExtractor={item => item.id}
         showsVerticalScrollIndicator={false}/>
