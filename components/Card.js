@@ -6,22 +6,24 @@ import {
 
 const Card = ({data}) => {
   return (
-    <Pressable
+    <TouchableOpacity
       style={styles.card}
       onPress={() => console.log(data)}>
-      <View style={{width: '100%', height: 250}}>
-        <Image
-          style={styles.image}
-          resizeMode='cover'
-          source={{
-            uri: data.download_url,
-          }}/>
-      </View>
+      <View>
+        <View style={{width: '100%', height: 250}}>
+          <Image
+            style={styles.image}
+            resizeMode='cover'
+            source={{
+              uri: data.download_url,
+            }}/>
+        </View>
         <Text
           style={styles.author}>
           {data.author}
         </Text>
-    </Pressable>
+      </View>
+    </TouchableOpacity>
   );
 }
 export default Card;
