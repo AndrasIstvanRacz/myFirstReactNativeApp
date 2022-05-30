@@ -15,7 +15,7 @@ export default function Home ({navigation}) {
         style={styles.image}>
         <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Cards')}>
           <Text style={styles.buttonText}>
-            Login
+            Continue
           </Text>
         </TouchableOpacity>
       </ImageBackground>
