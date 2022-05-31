@@ -10,7 +10,7 @@ export default function Home ({navigation}) {
     <SafeAreaView style={styles.container}>
       <StatusBar hidden/>
       <ImageBackground
-        source={HomeBackground}
+        source={{uri: "https://picsum.photos/id/250/1080/1920?blur=10"}}
         resizeMode="cover"
         style={styles.image}>
         <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Cards')}>
