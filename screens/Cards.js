@@ -1,5 +1,5 @@
 import {FlatList, SafeAreaView, StatusBar} from "react-native";
-import Card from "../components/Card";
+import FlipCard from "../components/FlipCard/FlipCard";
 import {getData} from "../data/Data";
 import {useState, useEffect} from "react";
 import Header from "../components/Header";
@@ -33,7 +33,7 @@ export default function Cards() {
       <FlatList
         contentContainerStyle={{paddingBottom: 100}}
         data={filteredData}
-        renderItem={({item}) => <Card data={item}/>}
+        renderItem={({item}) => <FlipCard data={item}/>}
         keyExtractor={item => item.id}
         showsVerticalScrollIndicator={false}/>
     </SafeAreaView>

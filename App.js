@@ -3,7 +3,6 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
 import Home from "./screens/Home";
 import Cards from "./screens/Cards";
-import {StatusBar} from "react-native";
 
 
 export default function App() {

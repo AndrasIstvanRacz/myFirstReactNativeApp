@@ -2,7 +2,6 @@ import {
   StyleSheet, Text, SafeAreaView,
   TouchableOpacity, ImageBackground, StatusBar
 } from "react-native";
-import HomeBackground from "../assets/home-background.jpg"
 
 
 export default function Home ({navigation}) {

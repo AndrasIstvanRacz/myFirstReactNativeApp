@@ -1,8 +1,6 @@
 import {
-  Platform, StatusBar,
   StyleSheet, TextInput, View
 } from "react-native";
-import {useState} from "react";
 
 
 const Header = ({onSearch}) => {
