@@ -10,7 +10,7 @@ class FlipCard extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {isFront: false};
+    this.state = {isFront: true};
     this.animatedValue = new Animated.Value(0);
     this.value = 0;
     this.animatedValue.addListener(({value}) => {
@@ -31,7 +31,7 @@ class FlipCard extends Component {
 
   flipCard = () => {
     if (this.value >= 90) {
-      this.setState({isFront: false})
+      this.setState({isFront: true})
       Animated.spring(this.animatedValue, {
         toValue: 0,
         friction: 8,
@@ -39,7 +39,7 @@ class FlipCard extends Component {
         useNativeDriver: true
       }).start();
     } else {
-      this.setState({isFront: true})
+      this.setState({isFront: false})
       Animated.spring(this.animatedValue, {
         toValue: 180,
         friction: 8,

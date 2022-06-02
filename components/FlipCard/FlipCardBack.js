@@ -31,13 +31,12 @@ export const FlipCardBack = ({styles, author, width,
         Source
         </Text>
         <Text
-          style={isFront ? {
+          style={{
             fontSize: 15,
             textDecorationStyle: "solid",
-            textDecorationLine: "underline"}
-            :
-          {display: "none"}}
-          onPress={() => Linking.openURL(source)}>
+            textDecorationLine: "underline"}}
+
+          onPress={() =>{ if(!isFront){ Linking.openURL(source)}}}>
           {source}
         </Text>
       </ImageBackground>
